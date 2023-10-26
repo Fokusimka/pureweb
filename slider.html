@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/slider.css">
+    <title>Slider</title>
+</head>
+<body>
+    <div class="layout">
+       <div class="slider" id="slider">
+            <div class="slider-item slider-item_first">SLIDE 1</div>
+            <div class="slider-item slider-item_second">SLIDE 2</div>
+            <div class="slider-item slider-item_third">SLIDE 3</div>
+       </div>
+       <div class="controls">
+            <div class="left-control"><</div>
+            <div class="right-control">></div>
+       </div>
+       <div class="dots">
+            <div class="dots-item active"></div>
+            <div class="dots-item"></div>
+            <div class="dots-item"></div>
+       </div>
+    </div>
+</body>
+</html>
+<script>
+    let dot = document.getElementsByClassName('dots-item'),
+        dots = document.getElementsByClassName('dots')[0],
+        slides = document.getElementsByClassName('slider-item'),
+        slider = document.getElementById('slider'),
+        prevBtn = document.getElementsByClassName('left-control')[0],
+        nextBtn = document.getElementsByClassName('right-control')[0],
+        width = slider.clientWidth,
+        slideId = 1;
+
+        slider.append(slides[0].cloneNode(true))
+        slider.prepend(slides[slides.length - 2].cloneNode(true))
+
+        prevBtn.addEventListener('click', function (event) {
+            animation = window.setInterval(countDown, 20, true);
+        });
+        
+        nextBtn.addEventListener('click', function (event) {
+            animation = window.setInterval(countIt, 20, true);
+        });
+
+    function countDown () {
+        nextBtn.style.pointerEvents = 'none'
+        prevBtn.style.pointerEvents = 'none'
+        dots.style.pointerEvents = 'none'
+        let initialOffset = parseInt(getComputedStyle(document.getElementById('slider')).left)
+        if (initialOffset === -((slideId - 1) * width)) {
+            clearInterval(animation)
+            slideId -= 1
+            nextBtn.style.pointerEvents = 'all'
+            prevBtn.style.pointerEvents = 'all'
+            dots.style.pointerEvents = 'all'
+            if (slideId <= 0) {
+                slider.style.left = `-${(slides.length - 2) * width}px`,
+                slideId = slides.length - 2
+            }
+            for (let i = 0; i < dot.length; i++) {
+                dot[i].classList.remove('active')
+                if (slideId === i + 1) {
+                    dot[i].classList.add('active')
+                }
+            }
+        } else {
+            slider.style.left = `${initialOffset + 20}px`
+        }
+    }
+
+    function countIt () {
+        nextBtn.style.pointerEvents = 'none'
+        prevBtn.style.pointerEvents = 'none'
+        dots.style.pointerEvents = 'none'
+        let initialOffset = parseInt(getComputedStyle(document.getElementById('slider')).left)
+        if (initialOffset === -((slideId + 1) * width)) {
+            clearInterval(animation)
+            slideId += 1
+            nextBtn.style.pointerEvents = 'all'
+            prevBtn.style.pointerEvents = 'all'
+            dots.style.pointerEvents = 'all'
+            if (slideId >= slides.length - 1) {
+                slider.style.left = '-800px',
+                slideId = 1
+            }
+            for (let i = 0; i < dot.length; i++) {
+                dot[i].classList.remove('active')
+                if (slideId === i + 1) {
+                    dot[i].classList.add('active')
+                }
+            }
+        } else {
+            slider.style.left = `${initialOffset - 20}px`
+            if (initialOffset === -(slides.length - 1) * width) {
+                slider.style.left = `-${width}px`
+            }
+        }
+    }
+
+    function goToSlide (n) {
+        for (let i = 0; i < dot.length; i++) {
+            dot[i].classList.remove('active')
+            dot[n - 1].classList.add('active')
+        }
+        nextBtn.style.pointerEvents = 'none'
+        prevBtn.style.pointerEvents = 'none'
+        dots.style.pointerEvents = 'none'
+        let initialOffset = parseInt(getComputedStyle(document.getElementById('slider')).left)
+        if (initialOffset === -(n * width)) {
+            clearInterval(step)
+            slideId = n
+            nextBtn.style.pointerEvents = 'all'
+            prevBtn.style.pointerEvents = 'all'
+            dots.style.pointerEvents = 'all'
+        } else {
+            slider.style.left = `${initialOffset - 20}px`
+            if (initialOffset === -(slides.length - 1) * width) {
+                slider.style.left = `-${width}px`
+            }
+        }
+    }
+
+    dots.onclick = function (e) {
+        for (let i = 0; i < dot.length + 1; i++) {
+            if (e.target.classList.contains('dots-item') && e.target === dot[i - 1]) {
+                step = window.setInterval(() => goToSlide(i), 20, true)
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/colors.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/fonts/fonts.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="modal-layout" id="modal">
+        <form class="modal-contnen" id="modalForm">
+            <img class="cancel-modal" src="./assets/icons/cancel.svg" alt="X" width="20" id="modalCancel">
+            <div class="modal-input-container">
+                <label class="modal-label">Name<span>*</span></label>
+                <input class="modal-input" placeholder="Enter name" name="name" >
+                <label class="label_error" id="error-name"></label>
+            </div>
+            <div class="modal-input-container">
+                <label class="modal-label">Email<span>*</span></label>
+                <input class="modal-input" placeholder="Enter email" name="email" >
+                <label class="label_error" id="error-email"></label>
+            </div>
+            <div class="modal-input-container">
+                <label class="modal-label">Phone number<span>*</span></label>
+                <input class="modal-input" placeholder="+7 900 000 00 00" name="phone" >
+                <label class="label_error" id="error-phone"></label>
+            </div>
+            <label class="modal-label">Company</label>
+            <input class="modal-input" placeholder="Enter company" name="company" >
+            <label class="modal-label">Website/Store URL</label>
+            <input class="modal-input" placeholder="Enter Website/Store URL" name="website" >
+            <label class="label_error general-error" id="error"></label>
+            <label class="modal-terms">
+                By submitting this form you are agreeing to Budss’s <a href="#">Privacy Policy</a> and <a href="#">Terms of Use</a>
+            </label>
+            <div>
+                <button class="button button_modal button_borderless">Contact sales</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-layout" id="successModal">
+        <div class="modal-contnen">
+            <img class="cancel-modal" src="./assets/icons/cancel.svg" alt="X" width="20" id="succesModalCancel">
+            <img src="./assets/images/doneModal.svg" alt="Success image" >
+            <span class="modal-success_title">Thank you!</span>
+            <span class="modal-success_description">Thank you, we have received your application and will contact you soon!</span>
+            <div class="button-modal_success">
+                <button class="button button_borderless" id="successModalButton">Super!</button>
+            </div>
+        </div>
+    </div>
+    <nav class="tabs-container wrap-container">
+        <div class="wrap tabs">
+            <div class="tab tab_selected" >For Business</div>
+            <div class="tab" >For Customers</div>
+        </div>
+    </nav>
+    <header class="header-container wrap-container">
+       <div class="wrap header">
+            <img src="./assets/icons/logo.svg" alt="logo">
+            <img class="_mobile" src="./assets/icons/menu.svg" alt="Menu button" id="mobileMenuButton" >
+            <button class="button desktop" id="modalButton" >Contact sales</button>
+       </div>
+    </header>
+    <aside class="mobile-menu" id="mobileMenu">
+        <img class="cancel-modal" src="./assets/icons/cancelMenu.svg" alt="X" width="100" id="cancelMobileMenu">
+        <button class="button">Contact sales</button>
+        <div class="mobile-menu-links">
+            <a class="mobile-menu-link">For Business</a>
+            <a class="mobile-menu-link">For Customers</a>
+            <a class="mobile-menu-link">Privacy Policy</a>
+            <a class="mobile-menu-link">Terms Of Use - Seller</a>
+            <a class="mobile-menu-link">Terms of Use - Sellers & Customers</a>
+        </div>
+    </aside>
+    <section class="wrap-container">
+        <div class="wrap greating">
+            <div class="greating-left">
+                <h2>Everyone is an Influencer</h2>
+                <p>Budss is a payments as a service and WOM engine dedicated to acquisition and 
+                    retention of customers to your business.</p>
+                <button class="button" id="modalButtonMain" >Contact sales</button>
+            </div>
+            <div class="greating-right">
+                <img class="rastr" src="./assets/images/women.png" alt="women">
+                <img class="vector" src="./assets/icons/vector.svg" alt="vector">
+            </div>
+        </div>
+    </section>
+    <section class="wrap-container">
+        <div class="wrap about">
+            <h2>About Budss</h2>
+            <div class="about-sections">
+                <div class="about-left">
+                    <span>
+                        Payment as a service, powered seamlessly
+                        by our network of shoppers 
+                        <img src="./assets/icons/vectorLine.svg" alt="line">
+                    </span>
+                    <img src="./assets/icons/groupVector.svg" alt="group">
+                </div>
+                <div class="about-right">
+                    <div class="about-card">
+                        <img src="./assets/icons/star.svg" alt="star">
+                        <h3>Contactless</h3>
+                        <p>Budss uses near field communication (NFC) for making contactless payments.</p>
+                    </div>
+                    <div class="about-card">
+                        <img src="./assets/icons/arrow.svg" alt="arrow">
+                        <h3>Increased Buying Power</h3>
+                        <p>Returning customers spend up to 3X more.</p>
+                    </div>
+                    <div class="about-card">
+                        <img src="./assets/icons/zig.svg" alt="zigzag">
+                        <h3>Analytics & Insights</h3>
+                        <p>Gain a holistic view into your customers’ buying behavior & purchasing patterns.</p>
+                    </div>
+                    <div class="about-card">
+                        <img src="./assets/icons/chain.svg" alt="chain">
+                        <h3>Fraud Protection</h3>
+                        <p>Budss handles all payments with a fraud prevention algorithm to flag high 
+                            risk purchases & a user set PIN code to keep payment info secure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wrap-container">
+        <div class="wrap how">
+            <div class="phone">
+                <img src="./assets/images/phone.png" alt="phone">
+                <img class="phone-content" src="./assets/images/phoneContent.png" alt="content">
+            </div>            
+            <div class="how-budds-works-container">
+                <h4 class="how-budss-works how-budss-works_turq">How Buddss Works</h4>
+                <h4 class="how-budss-works how-budss-works_outline">How Buddss Works</h4>
+            </div>
+            <div class="how-budds-works-container">
+                <h4 class="how-budss-works how-budss-works_outline">How Buddss Works</h4>
+                <h4 class="how-budss-works how-budss-works_purple">How Buddss Works</h4>
+            </div>
+            <div class="how-budds-works-container">
+                <h4 class="how-budss-works how-budss-works_golden">How Buddss Works</h4>
+                <h4 class="how-budss-works how-budss-works_outline">How Buddss Works</h4>
+            </div>
+        </div>
+    </section>
+    <section class="wrap-container discounts-container">
+        <div class="wrap discounts">
+            <div class="discount-card">
+                <h3>15%</h3>
+                <p>Increase in Purchase Amount</p>
+            </div>
+            <div class="discount-card">
+                <h3>30%</h3>
+                <p>Growth in Annual Sales</p>
+            </div>
+            <div class="discount-card">
+                <h3>10%</h3>
+                <p>Growth in New Customers</p>
+            </div>
+        </div>
+    </section>
+    <section class="wrap-container">
+        <div class="wrap">
+            <div class="why-budss">
+                <h3>Why Budss</h3>
+                <span>
+                    We Provide Advanced Payment Solutions To Grow Your Business
+                    <img src="./assets/icons/vectorLine.svg" alt="line">
+                </span>
+            </div>
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-card-left">
+                        <img src="./assets/images/turnCustomers.png" alt="image">
+                    </div>
+                    <div class="why-card-right">
+                        <h5>Turn your customers into loyal influencers</h5>
+                        <p>
+                            Budss helps businesses harness the exponential power of loyal customers for acquisition and retention.
+                        </p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-right">
+                        <h5>Harness the power of buying in bulk</h5>
+                        <p>
+                            Get at least 2X more sales with Budss Buying Groups. 
+                            Your customer base will grow exponentially as your customers add their friends & family to your personalized group.
+                        </p>
+                        <img class="buying buying_turq-bag" src="./assets/images/buying1.svg" alt="image">
+                        <img class="buying buying_golden-bag" src="./assets/images/buying2.svg" alt="image">
+                        <img class="buying buying_purple-bag" src="./assets/images/buying3.svg" alt="image">
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-right">
+                        <h5>Supercharge Loyalty With Instant Cash Back</h5>
+                        <p>
+                            Budss allows for shoppers to earn immediate cash back at their favorite stores.
+                        </p>
+                        <img class="supercharge" src="./assets/images/supercharge.svg" alt="image">
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-right">
+                        <h5>Seasoned with AI and Gamification</h5>
+                        <p>
+                            AI programming creates a personalized customer journey, offering recommendations 
+                            for their next purchase and optimizing rewards for after purchase.
+                        </p>
+                    </div>
+                    <div class="why-card-left">
+                        <img class="ai" src="./assets/images/ai.svg" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wrap-container let-grow-container">
+        <div class="wrap">
+            <div class="let-grow">
+                <h3>Let Your Business Grow</h3>
+                <button class="button button_borderless" >Contact sales</button>
+            </div>
+            <div class="socials">
+                <div class="socials-left">
+                    <h2>Your Brand Awareness Maters</h2>
+                    <p>Budss is a husle free solution to put your brand on any digital 
+                        surface including Instagram, Facebook, Twitter and TikTok</p>
+                </div>
+                <div class="socials-right">
+                    <a href="https://www.google.com"><img src="./assets/icons/facebook.svg" alt="facebook"></a>
+                    <a href="https://www.google.com"><img src="./assets/icons/twitter.svg" alt="twitter"></a>
+                    <a href="https://www.google.com"><img src="./assets/icons/instagram.svg" alt="instagram"></a>
+                    <a href="https://www.google.com"><img src="./assets/icons/tiktok.svg" alt="tiktok"></a>
+                </div>
+            </div>
+            <div class="partners">
+                <img src="./assets/images/part1.png" alt="partner">
+                <img src="./assets/images/part2.png" alt="partner">
+                <img src="./assets/images/part3.png" alt="partner">
+                <img src="./assets/images/part4.png" alt="partner">
+                <img src="./assets/images/part5.png" alt="partner">
+            </div>
+        </div>
+    </section>
+    <footer class="wrap-container">
+        <div class="wrap">
+            <div class="footer">
+                <img src="./assets/icons/logo.svg" alt="logo">
+                <div class="footer-nav">
+                    <span>For Business</span>
+                    <span>For Customers</span>
+                    <span class="_mobile">Privacy Policy</span>
+                    <span class="_mobile">Terms Of Use - Seller</span>
+                    <span class="_mobile">Terms of Use - Sellers & Customers</span>
+                </div>
+                <div class="footer-links">
+                    <button class="button" >Contact sales</button>
+                    <img src="./assets/images/appstore.png" alt="appstore">
+                    <img src="./assets/images/googleplay.png" alt="googleplay">
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© Copyright 2023, All Rights Reserved by Budss</p>
+                <div class="policy">
+                    <a class="desktop" href="https://www.google.com">Privacy Policy</a>
+                    <a class="desktop" href="https://www.google.com">Terms Of Use - Seller</a>
+                    <a class="desktop" href="https://www.google.com">Terms of Use - Sellers & Customers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let modal = document.getElementById('modal')
+        let trigger = document.getElementById('modalButton')
+        let differentTrigger = document.getElementById('modalButtonMain')
+        let cnacelTrigger = document.getElementById('modalCancel')
+    
+        let successModalCancel = document.getElementById('succesModalCancel')
+        let successModal = document.getElementById('successModal')
+        let successModalButton = document.getElementById('successModalButton')
+    
+        let mobileMenu = document.getElementById('mobileMenu')
+        let mobileMenuButton = document.getElementById('mobileMenuButton')
+        let mobileMenuCancel = document.getElementById('cancelMobileMenu')
+    
+        trigger.onclick = function() {
+            modal.style.display = "flex";
+        }
+        differentTrigger.onclick = function() {
+            modal.style.display = "flex";
+        }
+        cnacelTrigger.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+        if (event.target == modal || event.target == successModal) {
+            modal.style.display = "none";
+            successModal.style.display = "none";
+        }}
+    
+        successModalButton.onclick = function () {
+            successModal.style.display = 'none'
+        }
+        successModalCancel.onclick = function() {
+            successModal.style.display = "none";
+        }
+    
+        mobileMenuButton.onclick = function() {
+            mobileMenu.style.display = 'flex'
+        }
+        mobileMenuCancel.onclick = function() {
+            mobileMenu.style.display = 'none'
+        }
+    </script>
+    <script>
+        let form = document.getElementById("modalForm")
+        form.addEventListener('submit', function(e) {
+            e.preventDefault()
+            let inputs = form.querySelectorAll('input')
+            let inputsAr = []
+            inputs.forEach((input) => {
+                if (input.name === 'name' || input.name === 'email' || input.name === 'phone') {
+                    if (input.value === '') {
+                        inputsAr.push(input)
+                        let element = document.querySelector(`#error-${input.name}`);
+                        element.innerHTML = 'This field is requaired';
+                        input.classList.add('input_error')
+                    } else {
+                        let element = document.querySelector(`#error-${input.name}`);
+                        element.innerHTML = '';
+                        input.classList.remove('input_error')
+                    }
+                }
+            })
+            if (inputsAr.length === 0) {
+                let errorLabel = document.querySelector('#error').innerHTML = '';
+                let modal = document.getElementById('modal');
+                let successModal = document.getElementById('successModal');
+                modal.style.display = "none";
+                successModal.style.display = "flex";
+                
+            } else {
+                let errorLabel = document.querySelector('#error').innerHTML = 'Please fill in all required fields';
+            }
+        })
+    </script>
+  </body>
+</html>
